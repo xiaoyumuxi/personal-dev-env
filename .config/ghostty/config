@@ -1,0 +1,8 @@
+# Ghostty 配置
+
+# 字体设置
+font-family = "JetBrainsMono Nerd Font"
+font-size = 14
+
+# 主题 (可选)
+# theme = "tokyonight"
