@@ -89,9 +89,6 @@ export PATH="$HOME/.local/bin:$PATH"
 # ============================================
 # Other Tools
 # ============================================
-# iTerm2 integration
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
 # NVM - 延迟加载（只在需要时加载）
 export NVM_DIR="$HOME/.nvm"
 nvm() {

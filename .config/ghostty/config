@@ -45,28 +45,35 @@ macos-secure-input-indication = true
 # ===== 终端行为 =====
 copy-on-select = clipboard
 mouse-hide-while-typing = true
-scrollback-limit = 50000
+scrollback-limit = 120000
 desktop-notifications = true
 link-url = true
+link-previews = true
 shell-integration = detect
-
-# 自动复制选中文字到剪贴板
-copy-on-select = clipboard
 
 # 粘贴时确认（防止误粘贴多行命令）
 clipboard-paste-protection = true
+clipboard-paste-bracketed-safe = true
+clipboard-trim-trailing-spaces = true
 
 # ===== 性能 =====
-gpu-renderer = auto
+# `gpu-renderer` 在当前 Ghostty 版本已不支持，删除避免启动报错
 adjust-cell-height = 0
+window-inherit-working-directory = true
+tab-inherit-working-directory = true
+split-inherit-working-directory = true
+window-inherit-font-size = true
 
 # ===== Quick Terminal =====
 keybind = global:alt+`=toggle_quick_terminal
 quick-terminal-position = top
 quick-terminal-size = 40%
 quick-terminal-autohide = true
+quick-terminal-animation-duration = 0.12
 
 # ===== 快捷键 - 窗口管理 =====
+keybind = super+shift+,=reload_config
+keybind = super+,=open_config
 keybind = super+shift+p=toggle_command_palette
 keybind = super+d=new_split:right
 keybind = super+shift+d=new_split:down
@@ -102,8 +109,10 @@ keybind = super+4=goto_tab:4
 keybind = super+5=goto_tab:5
 
 # ===== 快捷键 - 搜索 =====
-keybind = super+f=text_search
-keybind = super+shift+f=text_search:regex
+keybind = super+f=start_search
+keybind = super+shift+f=end_search
+keybind = super+g=navigate_search:next
+keybind = super+shift+g=navigate_search:previous
 
 # ===== 快捷键 - 复制粘贴 =====
 keybind = super+c=copy_to_clipboard
@@ -111,6 +120,5 @@ keybind = super+v=paste_from_clipboard
 keybind = super+shift+v=paste_from_clipboard
 
 # ===== 快捷键 - 其他 =====
-keybind = super+shift+i=inspector
-keybind = super+shift+u=unicode_input
-keybind = super+shift+s=Screenshot:screen
+keybind = super+shift+i=inspector:toggle
+# `unicode_input` / `Screenshot:screen` 不是当前版本支持的动作
